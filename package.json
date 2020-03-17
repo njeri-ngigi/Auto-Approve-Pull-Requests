@@ -1,0 +1,29 @@
+{
+  "name": "Auto-Approve-Pull-Requests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/njeri-ngigi/Auto-Approve-Pull-Requests.git",
+  "author": "njeri-ngigi <njery.ngigi@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "package": "ncc build index.js -o dist"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "JavaScript"
+  ],
+  "dependencies": {
+    "@actions/core": "^1.1.1",
+    "@actions/github": "^2.1.1"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.5",
+    "husky": "^4.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run package && git add dist --f"
+    }
+  }
+}
