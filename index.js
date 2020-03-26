@@ -1,7 +1,7 @@
 const github = require("@actions/github");
 const core = require("@actions/core");
-const SKIPPED_BRANCH = "skip";
-const SKIPPED_BRANCH_LENGTH = 4;
+const SKIPPED_BRANCH = "skip-";
+const SKIPPED_BRANCH_LENGTH = 5;
 
 async function run() {
   try {

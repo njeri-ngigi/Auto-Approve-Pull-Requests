@@ -497,8 +497,8 @@ module.exports = require("os");
 
 const github = __webpack_require__(469);
 const core = __webpack_require__(470);
-const SKIPPED_BRANCH = "skip";
-const SKIPPED_BRANCH_LENGTH = 4;
+const SKIPPED_BRANCH = "skip-";
+const SKIPPED_BRANCH_LENGTH = 5;
 
 async function run() {
   try {
