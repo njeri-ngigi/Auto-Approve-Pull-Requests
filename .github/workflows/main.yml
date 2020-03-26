@@ -2,11 +2,13 @@ name: Auto Approve Pull Request
 on:
   pull_request:
     branches:
+      - 'master'
       - 'skip-*'
 jobs:
   build:
     name: Approve PR
     runs-on: ubuntu-latest
+    if: startWith(github.ref, 'skip-') == true
     steps:
       - name: Fetch out code
         uses: njeri-ngigi/Auto-Approve-Pull-Requests@master
