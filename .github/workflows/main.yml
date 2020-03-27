@@ -8,10 +8,8 @@ jobs:
   build:
     name: Approve PR
     runs-on: ubuntu-latest
-    # if: startsWith(github.ref, 'skip-') == true
+    if: startsWith(github.head_ref, 'skip-') == true
     steps:
-      - name: print ref
-        run: echo running on branch ${GITHUB_REF##*/}
       - name: Fetch out code
         uses: njeri-ngigi/Auto-Approve-Pull-Requests@master
         with:
